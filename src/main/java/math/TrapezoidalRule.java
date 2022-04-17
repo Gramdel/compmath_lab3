@@ -12,7 +12,7 @@ public class TrapezoidalRule {
             for (int i = 0; i <= n; i++) {
                 double tmp = f.calculate(a + h * i);
                 if (!Double.isFinite(tmp)) {
-                    //solve shit
+                    tmp = (f.calculate(a + h * i - eps) + f.calculate(a + h * i + eps)) / 2;
                 }
                 if (i == 0 || i == n) {
                     tmp /= 2;
