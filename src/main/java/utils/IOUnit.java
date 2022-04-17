@@ -1,8 +1,8 @@
 package utils;
 
-import java.util.Scanner;
+import org.mariuszgromada.math.mxparser.Function;
 
-import org.mariuszgromada.math.mxparser.*;
+import java.util.Scanner;
 
 public class IOUnit {
     private static final Scanner reader = new Scanner(System.in);

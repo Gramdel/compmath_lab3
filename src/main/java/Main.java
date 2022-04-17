@@ -1,6 +1,7 @@
 import math.TrapezoidalRule;
-import org.mariuszgromada.math.mxparser.*;
+import org.mariuszgromada.math.mxparser.Function;
 
+import static utils.Convertor.toPrecision;
 import static utils.IOUnit.*;
 
 public class Main {
@@ -10,6 +11,10 @@ public class Main {
         double b = inputB(a);
         Function f = inputFunction();
         double eps = inputEps();
-        System.out.println(TrapezoidalRule.calcIntegral(a, b, f, eps));
+        try {
+            System.out.println("Приближённый ответ: " + toPrecision(TrapezoidalRule.calcIntegral(a, b, f, eps), eps));
+        } catch (NumberFormatException e) {
+            System.out.println("Ответ не получен, поскольку на выбранном интервале неустранимый разрыв!");
+        }
     }
 }
